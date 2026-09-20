@@ -1,0 +1,529 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FitPro Security — Training for Close Protection Operatives</title>
+<meta name="description" content="Time-efficient training for close protection operatives. Built around long details, short notice and broken sleep — so the job stops costing you your fitness.">
+<meta name="theme-color" content="#05070A">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FitPro Security">
+<meta property="og:description" content="Take your time back. Be physically capable for the job. Time-efficient training for close protection operatives.">
+<meta property="og:image" content="images/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@500;600&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#05070A;
+  --bg-alt:#080B11;
+  --panel:#0C1219;
+  --line:#19212C;
+  --line-soft:#141B25;
+  --text:#FFFFFF;
+  --text-2:#E4EAF2;
+  --text-3:#A3B0C2;
+  --text-4:#8A98AB;
+  --accent:#4D94FF;
+  --accent-solid:#1552C9;
+  --accent-solid-hover:#1A62E8;
+  --accent-line:#22416E;
+  --gutter:20px;
+  --sans:'IBM Plex Sans',system-ui,-apple-system,sans-serif;
+  --mono:'IBM Plex Mono',ui-monospace,monospace;
+  --display:'Archivo','IBM Plex Sans',system-ui,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+body{
+  margin:0;background:var(--bg);color:var(--text);
+  font-family:var(--sans);font-size:16px;line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block}
+h1,h2,h3{font-family:var(--display);margin:0}
+p{margin:0}
+a{color:var(--accent)}
+a:hover{color:#9CC3FF}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+
+.wrap{max-width:1280px;margin:0 auto;padding-inline:var(--gutter)}
+.skip{position:absolute;left:-9999px}
+.skip:focus{left:var(--gutter);top:8px;position:fixed;z-index:20;background:var(--accent-solid);color:#fff;padding:10px 16px;text-decoration:none}
+
+/* type helpers */
+.label{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--text-4)}
+.label-accent{color:var(--accent)}
+.rule{display:inline-block;width:32px;height:1px;background:var(--accent);vertical-align:middle;margin-right:12px}
+.kicker{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.h2{font-size:clamp(26px,5.2vw,38px);line-height:1.12;font-weight:700;text-transform:uppercase;letter-spacing:.005em}
+.lead{margin-top:20px;font-size:clamp(16px,2.2vw,17px);line-height:1.65;color:var(--text-3);max-width:68ch}
+
+/* header */
+.site-head{position:sticky;top:0;z-index:10;background:rgba(5,7,10,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site-head .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.brand{font-family:var(--display);font-size:15px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--text);text-decoration:none}
+.brand span{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:30px}
+.nav a:not(.btn){display:none}
+.nav a{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text-3);text-decoration:none}
+.nav a:hover{color:#fff}
+
+/* buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;border:1px solid transparent;transition:background .15s ease,border-color .15s ease}
+.btn-primary{background:var(--accent-solid);color:#fff}
+.btn-primary:hover{background:var(--accent-solid-hover);color:#fff}
+.btn-ghost{border-color:#2A3646;color:#fff}
+.btn-ghost:hover{border-color:#41556E;color:#fff}
+.btn-sm{min-height:44px;padding:0 18px;font-size:11px}
+.btn-block{display:flex;width:100%}
+
+/* sections */
+section{padding-block:clamp(48px,7vw,88px)}
+.band{background:var(--bg-alt);border-block:1px solid var(--line)}
+.sec-head{margin-bottom:36px}
+
+/* hero */
+.hero{padding-bottom:clamp(40px,5vw,88px)}
+.hero h1{font-size:clamp(38px,8.2vw,80px);line-height:1.03;letter-spacing:-.033em;font-weight:800;max-width:15ch}
+.hero .lead{margin-top:24px;max-width:56ch;font-size:clamp(16px,2.6vw,19px)}
+.hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.hero-cta .btn{flex:1 1 100%}
+
+/* fact strip */
+.strip{border-block:1px solid var(--line)}
+.strip ul{list-style:none;margin:0;padding:0;display:grid}
+.strip li{padding:16px var(--gutter);border-bottom:1px solid var(--line)}
+.strip li:last-child{border-bottom:0}
+
+/* generic bordered grid */
+.cards{display:grid;gap:0;border:1px solid var(--line)}
+.cards>*{padding:26px 22px;border-bottom:1px solid var(--line)}
+.cards>*:last-child{border-bottom:0}
+.card h3{font-size:18px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.card p{font-size:15px;color:var(--text-3)}
+.card svg{margin-bottom:12px}
+
+/* numbered rows */
+.rows{display:flex;flex-direction:column}
+.row{padding:22px 0;border-top:1px solid var(--line)}
+.rows .row:last-child{border-bottom:1px solid var(--line)}
+.row .num{font-family:var(--mono);font-size:12px;font-weight:600;letter-spacing:.1em;color:var(--accent)}
+.row h3{font-size:19px;font-weight:700;margin:8px 0;letter-spacing:-.01em}
+.row p{font-size:15px;color:var(--text-3)}
+
+/* programmes */
+.prog{border:1px solid var(--line);border-top:2px solid var(--accent);padding:28px 22px}
+.prog h3{font-size:clamp(21px,4vw,26px);font-weight:700;letter-spacing:-.02em;margin:12px 0}
+.prog p{font-size:15px;color:var(--text-3)}
+.spec{margin:20px 0 0;border-top:1px solid var(--line)}
+.spec div{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line)}
+.spec div:last-child{border-bottom:0}
+.spec dt{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--text-4)}
+.spec dd{margin:0;font-size:14px;font-weight:600;color:#fff}
+.spec .none{color:var(--accent)}
+
+/* included list */
+.incl{border:1px solid var(--line)}
+.incl>div{padding:22px;border-bottom:1px solid var(--line)}
+.incl>div:last-child{border-bottom:0}
+.incl strong{display:block;font-size:16px;font-weight:600;color:#fff}
+.incl p{margin-top:8px;font-size:15px;color:var(--text-3)}
+
+/* who it's for */
+.who{display:grid;gap:14px}
+.who-box{border:1px solid var(--line);padding:24px 22px}
+.who-box.alt{border-color:var(--line-soft)}
+.who-box h3{margin-bottom:18px;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent)}
+.who-box.alt h3{color:var(--text-4)}
+.who-box ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.who-box li{font-size:15px;line-height:1.55;color:var(--text-2)}
+.who-box.alt li{color:var(--text-3)}
+
+/* results */
+.results{display:grid;gap:14px}
+.shot{border:1px solid var(--line)}
+.shot-head{display:flex;align-items:center;justify-content:space-between;padding:13px 16px;border-bottom:1px solid var(--line)}
+.shot-head .label{font-size:10px;letter-spacing:.16em}
+.shot-head .who-label{color:var(--text-2)}
+.shot img{width:100%;height:auto}
+
+/* founding */
+.offer{border:1px solid var(--accent-line);border-top:2px solid var(--accent);background:#080D16;padding:26px 22px}
+.offer-top{display:flex;align-items:baseline;justify-content:space-between;margin-bottom:16px;gap:12px}
+.offer-top .label{font-size:10px;letter-spacing:.16em}
+.rates{border-top:1px solid #1C2A3F;margin-bottom:22px}
+.rate{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:16px 0;border-bottom:1px solid #1C2A3F}
+.rate .name{display:block;font-size:15px;font-weight:600;color:#fff}
+.rate .note{display:block;margin-top:5px;font-size:13px;line-height:1.5;color:var(--text-4)}
+.rate .price{font-family:var(--mono);font-size:20px;font-weight:600;color:#fff;white-space:nowrap}
+.rate .price.hi{color:var(--accent)}
+.rate .price small{font-size:11px;font-weight:500;color:var(--text-4)}
+.offer dl{margin:0;display:flex;flex-direction:column;gap:16px}
+.offer dt{font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--text-4)}
+.offer dd{margin:8px 0 0;font-size:15px;line-height:1.6;color:var(--text-2)}
+.offer .fine{margin-top:14px;font-size:13px;line-height:1.55;color:var(--text-4)}
+.offer .btn{margin-top:24px}
+.aside{border:1px solid var(--line);padding:24px 22px;margin-top:20px}
+.aside p{margin-top:12px;font-size:15px;color:var(--text-3)}
+.aside strong{color:#fff;font-weight:600}
+
+/* footer */
+.site-foot{border-top:1px solid var(--line);padding-block:32px 44px}
+.site-foot .brand-line{font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:var(--text-2)}
+.site-foot .tag{display:block;margin-top:8px;font-size:13px;line-height:1.55;color:var(--text-4)}
+.site-foot nav{display:flex;flex-direction:column;gap:10px;margin-top:18px;font-size:14px}
+.site-foot nav a{text-decoration:none}
+
+/* ---------- tablet / desktop ---------- */
+@media (min-width:760px){
+  :root{--gutter:40px}
+  .hero-cta .btn{flex:0 0 auto}
+  .strip ul{grid-template-columns:repeat(3,1fr)}
+  .strip li{border-bottom:0;border-right:1px solid var(--line);padding:24px 0;padding-right:24px}
+  .strip li:first-child{padding-left:0}
+  .strip li:last-child{border-right:0}
+  .cards.c2{grid-template-columns:repeat(2,1fr)}
+  .cards.c3{grid-template-columns:repeat(3,1fr)}
+  .cards.c2>*,.cards.c3>*{border-bottom:0;border-right:1px solid var(--line);padding:32px 28px}
+  .cards.c2>*:nth-child(2n),.cards.c3>*:last-child{border-right:0}
+  .cards.c2>*:nth-child(-n+2){border-bottom:1px solid var(--line)}
+  .progs{display:grid;grid-template-columns:repeat(2,1fr);gap:0}
+  .progs .prog{padding:34px 30px}
+  .progs .prog:first-child{border-right:0}
+  .who{grid-template-columns:repeat(2,1fr);gap:0}
+  .who-box{padding:32px}
+  .who-box:first-child{border-right:0}
+  .results{grid-template-columns:repeat(2,1fr);gap:20px;align-items:start}
+  .incl>div{display:flex;gap:32px;padding:24px 28px}
+  .incl strong{flex:0 0 190px}
+  .incl p{margin-top:0}
+  .row{display:flex;gap:36px;padding:26px 0}
+  .row .num{flex:0 0 36px;padding-top:4px}
+  .row h3{flex:0 0 270px;margin:0;font-size:20px}
+  .row p{flex:1;font-size:16px}
+  .row-body{display:contents}
+}
+@media (min-width:1000px){
+  :root{--gutter:56px}
+  .nav a:not(.btn){display:inline}
+  .sec-head{display:flex;gap:64px;margin-bottom:44px}
+  .sec-head .kicker{flex:0 0 190px;margin-bottom:0;padding-top:8px;align-items:flex-start}
+  .sec-head .kicker .rule{display:none}
+  .sec-head-body{flex:1}
+  .founding-grid{display:flex;gap:56px;align-items:flex-start}
+  .founding-intro{flex:1}
+  .founding-intro h2{font-size:clamp(38px,4.2vw,52px);line-height:1.05;letter-spacing:-.03em;font-weight:800;text-transform:none}
+  .offer-col{flex:0 0 420px}
+  .offer{padding:32px}
+  .aside{padding:28px 30px}
+  .site-foot .wrap{display:flex;align-items:center;justify-content:space-between}
+  .site-foot nav{flex-direction:row;gap:28px;margin-top:0}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head">
+  <div class="wrap">
+    <a class="brand" href="#top">FitPro <span>Security</span></a>
+    <nav class="nav" aria-label="Main">
+      <a href="#approach">Approach</a>
+      <a href="#included">What you get</a>
+      <a href="#results">Results</a>
+      <a href="#who">Who it's for</a>
+      <a class="btn btn-primary btn-sm" href="PASTE-YOUR-GOOGLE-FORM-LINK-HERE">Apply</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="hero" id="top">
+    <div class="wrap">
+      <p class="kicker"><span class="rule" aria-hidden="true"></span><span class="label label-accent">Close protection · Performance</span></p>
+      <h1>Take your time back. Be physically capable for the job.</h1>
+      <p class="lead">Time-efficient training for close protection operatives. Built around long details, short notice and broken sleep — so the job stops costing you your fitness.</p>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="PASTE-YOUR-GOOGLE-FORM-LINK-HERE">Claim a founding place</a>
+        <a class="btn btn-ghost" href="#approach">How it works</a>
+      </div>
+    </div>
+  </section>
+
+  <div class="strip">
+    <div class="wrap">
+      <ul>
+        <li><span class="label">Built for operatives, not general population</span></li>
+        <li><span class="label">Two programmes · Gym or nothing at all</span></li>
+        <li><span class="label label-accent">Founding cohort · 5 places · By application</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <section id="constraint">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="rule" aria-hidden="true"></span><span class="label label-accent">01 / The constraint</span></p>
+        <div class="sec-head-body">
+          <h2 class="h2">It was never motivation. It was time.</h2>
+          <p class="lead">Most operatives don't need convincing that fitness matters. They need a plan that survives a fourteen-hour day, a task that lands late, and a hotel room with no kit in it.</p>
+        </div>
+      </div>
+      <div class="cards c3">
+        <div class="card">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4D94FF" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l4 2"/></svg>
+          <h3>Rosters you don't set</h3>
+          <p>Shifts move. Tasks come in late. A programme built on fixed gym days breaks in the first week.</p>
+        </div>
+        <div class="card">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4D94FF" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M3 18l5-7 4 4 4-8 5 11"/></svg>
+          <h3>Long hours, little recovery</h3>
+          <p>Static hours, travel and interrupted sleep take more out of you than the training ever does.</p>
+        </div>
+        <div class="card">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#4D94FF" stroke-width="1.5" stroke-linecap="square" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+          <h3>All or nothing</h3>
+          <p>When the only option is a full session, missed days quietly turn into missed months.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="capability">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="rule" aria-hidden="true"></span><span class="label label-accent">02 / Capability</span></p>
+        <div class="sec-head-body">
+          <h2 class="h2">In this job, you are the asset.</h2>
+          <p class="lead">Close protection isn't one quality. It's presence, strength, endurance and composure — and the ability to go from standing still to full output with no warning at all.</p>
+        </div>
+      </div>
+      <div class="rows">
+        <div class="row">
+          <span class="num">01</span>
+          <h3>Presence that gets respected</h3>
+          <p>How you carry yourself does work before anything happens. Looking physically capable deters, reassures the client and settles a room — that is part of the job, not a side effect of it.</p>
+        </div>
+        <div class="row">
+          <span class="num">02</span>
+          <h3>Carry, move, react</h3>
+          <p>Kit, distance and a client to move. Strength and work capacity are job requirements here, not vanity metrics.</p>
+        </div>
+        <div class="row">
+          <span class="num">03</span>
+          <h3>Long static, sudden maximal</h3>
+          <p>Hours of standing followed by seconds of everything. Your conditioning has to cover both ends of that, not just the middle.</p>
+        </div>
+        <div class="row">
+          <span class="num">04</span>
+          <h3>Stress and sleep debt</h3>
+          <p>Training done properly buffers fatigue and keeps your judgement sharp late into a shift, when it counts most.</p>
+        </div>
+        <div class="row">
+          <span class="num">05</span>
+          <h3>Career longevity</h3>
+          <p>Staying capable is how you keep getting selected — this year, and in ten years' time.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="approach">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="rule" aria-hidden="true"></span><span class="label label-accent">03 / The approach</span></p>
+        <div class="sec-head-body">
+          <h2 class="h2">How we give the time back.</h2>
+          <p class="lead">Every part of the programme is judged on one question: is this the highest return for the time it costs you?</p>
+        </div>
+      </div>
+
+      <div class="cards c2">
+        <div class="card">
+          <h3>Short sessions that earn their place</h3>
+          <p>No filler. Every session has a specific job, so nothing has to be made up for later in the week.</p>
+        </div>
+        <div class="card">
+          <h3>Built around the roster</h3>
+          <p>The plan flexes with the week you've actually got, instead of assuming a week you're never going to get.</p>
+        </div>
+        <div class="card">
+          <h3>Nutrition that fits the shift pattern</h3>
+          <p>A personalised plan built for petrol stations, hotel breakfasts and meals eaten at odd hours — not for someone with a kitchen and a quiet evening.</p>
+        </div>
+        <div class="card">
+          <h3>Accountability without another meeting</h3>
+          <p>Weekly check-ins that fit into your day rather than a fixed slot you'll end up cancelling anyway.</p>
+        </div>
+      </div>
+
+      <p class="kicker" style="margin-top:44px"><span class="rule" aria-hidden="true"></span><span class="label label-accent">The two programmes</span></p>
+      <div class="progs">
+        <div class="prog">
+          <span class="label">Programme 01</span>
+          <h3>The FitPro Programme</h3>
+          <p>Structured strength and conditioning for the weeks you've got a gym and a usable window. Progressive, all-round, and built to raise what you can do on a detail — not just what you can lift.</p>
+          <dl class="spec">
+            <div><dt>Sessions</dt><dd>3–4 a week</dd></div>
+            <div><dt>Length</dt><dd>20–45 minutes</dd></div>
+            <div><dt>Kit needed</dt><dd>Gym access</dd></div>
+          </dl>
+        </div>
+        <div class="prog">
+          <span class="label">Programme 02</span>
+          <h3>No Time. No Equipment. No Excuses.</h3>
+          <p>For hotel rooms, airports, residentials and the days the job takes everything. No kit and no gym needed — so there is always a session you can do, wherever you've been sent.</p>
+          <dl class="spec">
+            <div><dt>Sessions</dt><dd>3–4 a week</dd></div>
+            <div><dt>Length</dt><dd>20–45 minutes</dd></div>
+            <div><dt>Kit needed</dt><dd class="none">None</dd></div>
+          </dl>
+        </div>
+      </div>
+
+      <p class="kicker" id="included" style="margin-top:44px"><span class="rule" aria-hidden="true"></span><span class="label label-accent">What you get</span></p>
+      <div class="incl">
+        <div><strong>Both programmes</strong><p>Full access to the FitPro Programme and to No Time, No Equipment, No Excuses — switch between them as the work dictates.</p></div>
+        <div><strong>Personalised nutrition</strong><p>A nutrition plan written for you by me, around your shift pattern and what you can realistically get hold of.</p></div>
+        <div><strong>Weekly check-ins</strong><p>Every week, direct with me: what worked, what the roster did to it, and what changes for the week ahead.</p></div>
+        <div><strong>A FitPro cohort</strong><p>You're placed in a cohort alongside CPOs currently working in the industry — people whose week looks like yours.</p></div>
+        <div><strong>Community chat</strong><p>Full access to the FitPro Security chat: job opportunities, networking, and health, fitness and industry information shared between operatives.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="who">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="rule" aria-hidden="true"></span><span class="label label-accent">04 / Who it's for</span></p>
+        <div class="sec-head-body">
+          <h2 class="h2">Built for operatives, not general population.</h2>
+        </div>
+      </div>
+      <div class="who">
+        <div class="who-box">
+          <h3>This is for you if</h3>
+          <ul>
+            <li>You work in close protection — employed, freelance, residential or on rotation.</li>
+            <li>You're roughly 25 to 40 and the job has quietly taken over your training.</li>
+            <li>You want to be physically capable for the role, and carry the presence that goes with it.</li>
+            <li>Your time is limited and you're honest about how limited it is.</li>
+            <li>You'll do the work, as long as someone gives you the right work to do.</li>
+          </ul>
+        </div>
+        <div class="who-box alt">
+          <h3>Probably not for you if</h3>
+          <ul>
+            <li>You're chasing a stage-ready physique above everything else.</li>
+            <li>You want a generic plan you'll never adjust or report back on.</li>
+            <li>You're not willing to train consistently, even in short sessions.</li>
+            <li>You'd rather have a quick fix than something that holds for years.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="results">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="kicker"><span class="rule" aria-hidden="true"></span><span class="label label-accent">05 / Proof</span></p>
+        <div class="sec-head-body">
+          <h2 class="h2">Client transformations.</h2>
+          <p class="lead">Operatives who did the work around the job, not instead of it. Faces are obscured at their request.</p>
+        </div>
+      </div>
+      <div class="results">
+        <figure class="shot" style="margin:0">
+          <div class="shot-head"><span class="label who-label">Client 01</span><span class="label">Before / After</span></div>
+          <img src="images/client-01.jpg" onerror="this.onerror=null;this.src='client-01.jpg'" alt="Client 01 before and after, face obscured" loading="lazy" width="1400" height="1304">
+        </figure>
+        <figure class="shot" style="margin:0">
+          <div class="shot-head"><span class="label who-label">Client 02</span><span class="label">Before / After</span></div>
+          <img src="images/client-02.jpg" onerror="this.onerror=null;this.src='client-02.jpg'" alt="Client 02 before and after, face obscured" loading="lazy" width="1400" height="1400">
+        </figure>
+        <figure class="shot" style="margin:0">
+          <div class="shot-head"><span class="label who-label">Client 03</span><span class="label">Before / After</span></div>
+          <img src="images/client-03.jpg" onerror="this.onerror=null;this.src='client-03.jpg'" alt="Client 03 before and after, face obscured" loading="lazy" width="1400" height="1313">
+        </figure>
+        <figure class="shot" style="margin:0">
+          <div class="shot-head"><span class="label who-label">Client 04</span><span class="label">Before / After</span></div>
+          <img src="images/client-04.jpg" onerror="this.onerror=null;this.src='client-04.jpg'" alt="Client 04 before and after, face obscured" loading="lazy" width="1400" height="1331">
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" id="founding">
+    <div class="wrap">
+      <p class="kicker"><span class="rule" aria-hidden="true"></span><span class="label label-accent">06 / Founding cohort</span></p>
+      <div class="founding-grid">
+        <div class="founding-intro">
+          <h2 class="h2">Five founding places. Applications open now.</h2>
+          <p class="lead">The founding cohort is the first group into FitPro Security coaching. Direct access to me, closer input on your programme, and a founding rate that won't be offered again.</p>
+          <p class="lead">Places are by application, not checkout — every operative is screened before a spot is confirmed.</p>
+          <div class="aside">
+            <span class="label">Also available</span>
+            <p><strong>One-to-one coaching</strong> — programming, nutrition and check-ins built solely around you, outside the cohort. Price on enquiry.</p>
+          </div>
+        </div>
+        <div class="offer-col">
+          <div class="offer">
+            <div class="offer-top">
+              <span class="label">Founding cohort rates</span>
+              <span class="label label-accent">5 places</span>
+            </div>
+            <div class="rates">
+              <div class="rate">
+                <span><span class="name">Monthly</span><span class="note">Rolling · three-month minimum</span></span>
+                <span class="price">£100<small> / mo</small></span>
+              </div>
+              <div class="rate">
+                <span><span class="name">Three months</span><span class="note">Paid up front · saves £40</span></span>
+                <span class="price">£260</span>
+              </div>
+              <div class="rate">
+                <span><span class="name">Six months</span><span class="note">Paid up front · saves £100</span></span>
+                <span class="price hi">£500</span>
+              </div>
+            </div>
+            <dl>
+              <div>
+                <dt>Every place includes</dt>
+                <dd>Both programmes · Personalised nutrition plan · Weekly check-ins · FitPro cohort with working CPOs · Community chat</dd>
+              </div>
+              <div>
+                <dt>Starts</dt>
+                <dd>Agreed with you on acceptance</dd>
+              </div>
+            </dl>
+            <a class="btn btn-primary btn-block" href="PASTE-YOUR-GOOGLE-FORM-LINK-HERE">Apply for a founding place</a>
+            <p class="fine">Five places only. Once they're taken, applications move to a waitlist for the next cohort.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div>
+      <span class="brand-line">FitPro Security</span>
+      <span class="tag">Time-efficient training for close protection operatives.</span>
+    </div>
+    <nav aria-label="Contact and social">
+      <a href="mailto:fitprosecurity@gmail.com">fitprosecurity@gmail.com</a>
+      <a href="https://www.instagram.com/fitprosecurity">Instagram</a>
+      <a href="https://www.linkedin.com/in/fitpro-security-101943428">LinkedIn</a>
+    </nav>
+  </div>
+</footer>
+
+</body>
+</html>
