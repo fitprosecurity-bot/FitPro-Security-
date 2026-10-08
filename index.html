@@ -170,6 +170,12 @@ section{padding-block:clamp(48px,7vw,88px)}
 .aside p{margin-top:12px;font-size:15px;color:var(--text-3)}
 .aside strong{color:#fff;font-weight:600}
 
+/* newsletter */
+.news{border:1px solid var(--accent-line);border-top:2px solid var(--accent);background:#080D16;padding:28px 22px}
+.news h2{font-size:clamp(22px,4.4vw,30px);line-height:1.15;font-weight:700;letter-spacing:-.02em;text-transform:none;margin-top:14px}
+.news p{margin-top:14px;font-size:15px;line-height:1.6;color:var(--text-3);max-width:58ch}
+.news .btn{margin-top:22px}
+
 /* footer */
 .site-foot{border-top:1px solid var(--line);padding-block:32px 44px}
 .site-foot .brand-line{font-family:var(--display);font-size:12px;font-weight:800;letter-spacing:.17em;text-transform:uppercase;color:var(--text-2)}
@@ -219,6 +225,9 @@ section{padding-block:clamp(48px,7vw,88px)}
   .offer-col{flex:0 0 420px}
   .offer{padding:32px}
   .aside{padding:28px 30px}
+  .news{display:flex;align-items:center;justify-content:space-between;gap:56px;padding:40px}
+  .news .news-body{flex:1}
+  .news .btn{margin-top:0;flex:0 0 auto;white-space:nowrap}
   .site-foot .wrap{display:flex;align-items:center;justify-content:space-between}
   .site-foot nav{flex-direction:row;gap:28px;margin-top:0}
 }
@@ -509,6 +518,19 @@ section{padding-block:clamp(48px,7vw,88px)}
     </div>
   </section>
 
+  <section id="newsletter">
+    <div class="wrap">
+      <div class="news">
+        <div class="news-body">
+          <span class="label label-accent">The newsletter</span>
+          <h2>Not ready to apply? Read along instead.</h2>
+          <p>Short, practical notes on training, nutrition and staying physically capable around close protection work. Written for operatives, free, and you can unsubscribe whenever you like.</p>
+        </div>
+        <a class="btn btn-primary" href="https://fitprosecurity.beehiiv.com/" target="_blank" rel="noopener">Subscribe free</a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-foot">
@@ -521,6 +543,7 @@ section{padding-block:clamp(48px,7vw,88px)}
       <a href="mailto:fitprosecurity@gmail.com">fitprosecurity@gmail.com</a>
       <a href="https://www.instagram.com/fitprosecurity">Instagram</a>
       <a href="https://www.linkedin.com/in/fitpro-security-101943428">LinkedIn</a>
+      <a href="https://fitprosecurity.beehiiv.com/" target="_blank" rel="noopener">Newsletter</a>
     </nav>
   </div>
 </footer>
